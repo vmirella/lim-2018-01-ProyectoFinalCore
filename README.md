@@ -1,5 +1,3 @@
-# lim-2018-01-ProyectoFinalCore
-
 # Proyecto Final Common Core
 
 ## Preámbulo
