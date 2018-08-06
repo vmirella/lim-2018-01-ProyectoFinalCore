@@ -16,10 +16,10 @@ logIn.addEventListener('click', () => {
     if (!error) {
       window.location.assign('view.html')
     } else {
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       if (errorCode == 'auth/weak-password') {
-        alert('The password is too weak.');
+        alert('La contraseña es muy débil.');
       } else {
         alert(errorMessage);
       }
@@ -27,19 +27,3 @@ logIn.addEventListener('click', () => {
   }
   signInUser(getEmail.value, getPassword.value,callback);
 })
-window.signInUser = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-    window.location.assign('view.html')
-  })
-    .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
-        alert('The password is too weak.');
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
-    });
-};

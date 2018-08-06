@@ -1,3 +1,30 @@
+//Registra nueva visita
+window.newVisit = (date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit) => {
+  // A post entry.
+  var visitData = {
+    date: date,
+    entryTime: entryTime,
+    name: name,
+    dni: dni,
+    photo: photo,
+    photoUrl: photoUrl,
+    company: company,
+    employee: employee,
+    reasonForVisit: reasonForVisit,
+    timestamp: firebase.database.ServerValue.TIMESTAMP
+  }
+  // Get a key for a new Post.
+  var newVisitKey = firebase.database().ref().child('visit').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/visit/' + newVisitKey] = visitData;
+
+  firebase.database().ref().update(updates);
+
+  return newVisitKey;
+};
+
 //Listar las empresas de los clientes
 window.getClients = () => {
 	//retorna un objeto con la lista de clientes

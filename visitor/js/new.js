@@ -26,7 +26,7 @@ setFile.addEventListener('change', function (e) {
       /* var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       uploader.value = percentage; */
     },
-    function error(err) {},
+    function error(err) { },
     function () {
       task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
         fileName = file.name;
@@ -38,7 +38,36 @@ setFile.addEventListener('change', function (e) {
     }
   )
 })
-// };
+
+window.onload = () => {
+  getClients()
+    .then((snapshot) => {
+      //console.log(snapshot);
+      snapshot.forEach(element => {
+        console.log("ddd"+element);
+        console.log(element.val().company)
+        company.innerHTML += `<option value = "${element}">${element.val().company}</option>`;
+        /* element.forEach(e => {
+          console.log(e.val().company)
+        }) */
+      });
+      //imprimir los clientes en el sitio deseado
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+
+//llamar en el evento change del primer select
+getEmployees('LJC5kBGvC-BBmDKVnQa')
+  .then((snapshot) => {
+    console.log(snapshot.val());
+    //imprimir los clientes en el sitio deseado
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 const newVisitEntry = (photo, photoUrl) => {
   submitVisit.addEventListener('click', () => {
@@ -50,34 +79,10 @@ const newVisitEntry = (photo, photoUrl) => {
     employee = employee.value;
     reasonForVisit = reasonForVisit.value;
 
-    newVisit(date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit,);
+    newVisit(date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit, );
 
     // reload();
   });
 };
 
-window.newVisit = (date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit) => {
-  // A post entry.
-  var visitData = {
-    date: date,
-    entryTime: entryTime,
-    name: name,
-    dni: dni,
-    photo: photo,
-    photoUrl: photoUrl,
-    company: company,
-    employee: employee,
-    reasonForVisit: reasonForVisit,
-    timestamp: firebase.database.ServerValue.TIMESTAMP
-  }
-  // Get a key for a new Post.
-  var newVisitKey = firebase.database().ref().child('visit').push().key;
 
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  var updates = {};
-  updates['/visit/' + newVisitKey] = visitData;
-
-  firebase.database().ref().update(updates);
-
-  return newVisitKey;
-};
