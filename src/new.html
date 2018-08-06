@@ -49,33 +49,33 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Fecha</label>
-            <input id="date" class="form-control" type="date">
+            <input id="dateVisit" class="form-control" type="date">
           </div>
           <div class="form-group col-md-6">
             <label for="inputPassword4">Hora de entrada</label>
-            <input type="time" class="form-control" id="appt-time" name="appt-time" min="9:00" max="18:00" required />
+            <input type="time" class="form-control" id="entryTimeVisit" name="time" min="9:00" max="18:00" required />
           </div>
         </div>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" placeholder="">
+          <input id="nameVisit" type="text" class="form-control" placeholder="">
         </div>
         <div class="form-group">
           <label for="dni">DNI</label>
-          <input type="text" class="form-control">
+          <input id="dniVisit" type="text" class="form-control">
         </div>
         <div class="form-group">
           <label for="photo">Foto</label>
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="customFileLang" lang="es" accept="img/*">
+            <input type="file" class="custom-file-input" id="selectPhoto" lang="es" accept="img/*">
             <label class="custom-file-label" for="customFileLang">Seleccionar foto</label>
           </div>
         </div>
         <div class="form-group">
           <label for="">Visitado</label>
-          <select id="inputState" class="form-control">
+          <select id="employee" class="form-control">
             <option selected>Choose...</option>
-            <option>...</option>
+            <option>Juanita Perez</option>
           </select>
         </div>
         <div class="form-group">
@@ -83,18 +83,26 @@
             <div class="input-group-prepend">
               <span class="input-group-text">Motivo de visita</span>
             </div>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
+            <textarea id="reasonForVisit" class="form-control" aria-label="With textarea"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Observaciones</span>
+            </div>
+            <textarea id="observations" class="form-control" aria-label="With textarea"></textarea>
           </div>
         </div>
         <div class="form-group">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
             <label class="form-check-label" for="gridCheck">
-              Check me out
+              Verificame
             </label>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button id="submit" type="button" class="btn btn-primary">Enviar</button>
       </form>
     </div>
   </div>
@@ -107,7 +115,10 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/new.js"></script>
 </body>
 
 </html>
