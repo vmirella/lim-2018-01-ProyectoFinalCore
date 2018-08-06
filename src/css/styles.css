@@ -3,26 +3,7 @@
     width: 100vw;
     height: 100vh;
   }
-  .center {
-    display: flex;
-    height: calc(100% - 56px);
-    align-items: center;
-    justify-content: center;
-  }
-  .center-item {
-    margin: 0 auto;
-  }
-  .margin{
+  .margin {
     margin: 2rem auto;
   }
-  .btn-mobile {
-    padding: .60rem 1rem;
-    margin: 0;
-  }
-  .btn-signout{
-    padding: .10rem .50rem !important;
-    margin: 0;
-    text-transform: capitalize;
-  }
 }
-/* q */
