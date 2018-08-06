@@ -22,4 +22,18 @@ window.getEmployees = (uidClient) => {
     }
   });
 
+};
+
+const updateEmployees = (uidEmployed) => {
+	firebase.database().ref('employees/' + uidEmployed).update({
+		fullname: 'Gonzalo Parra',
+		uid: 'LJC5kBGvC-BBmDKVnQa'
+	}, function(error) {
+    if (error) {
+      return false;
+    } else {
+      return true;
+    }
+  });
+
 };*/

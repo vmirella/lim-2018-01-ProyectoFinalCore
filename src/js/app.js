@@ -9,6 +9,7 @@ var config = {
 firebase.initializeApp(config);
 
 //Ejemplo de como llamar la funcion
+//llamar al cargar la pagina, window onload
 getClients()
 .then((snapshot) => {
 	console.log(snapshot.val());
@@ -18,6 +19,7 @@ getClients()
 	console.log(error);
 });
 
+//llamar en el evento change del primer select
 getEmployees('LJC5kBGvC-BBmDKVnQa')
 .then((snapshot) => {
 	console.log(snapshot.val());
