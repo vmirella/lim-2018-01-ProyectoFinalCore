@@ -1,0 +1,27 @@
+@media only screen and (min-width: 320px) {
+  .viewport {
+    width: 100vw;
+    height: 100vh;
+  }
+  .center {
+    display: flex;
+    height: calc(100% - 56px);
+    align-items: center;
+    justify-content: center;
+  }
+  .center-item {
+    margin: 0 auto;
+  }
+  .margin{
+    margin: 2rem auto;
+  }
+  .btn-mobile {
+    padding: .60rem 1rem;
+    margin: 0;
+  }
+  td .btn[class*=btn-outline-]{
+    padding: .10rem .50rem;
+    margin: 0;
+    text-transform: capitalize;
+  }
+}
