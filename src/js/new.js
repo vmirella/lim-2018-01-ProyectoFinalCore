@@ -10,7 +10,7 @@ let reasonForVisit = document.querySelector('#reasonForVisit');
 let observations = document.querySelector('#observations');
 const submitVisit = document.querySelector('#submit');
 
-reload = () => {
+const reload = () => {
   window.location.reload();
 };
 
@@ -52,7 +52,7 @@ const newVisitEntry = (photo, photoUrl) => {
 
     newVisit(date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit,);
 
-    // reload();
+    reload();
   });
 };
 
