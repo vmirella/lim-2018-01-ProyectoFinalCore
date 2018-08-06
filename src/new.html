@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Registro de visitantes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,7 +18,7 @@
 <body>
   <div class="viewport">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Registro de visitantes</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="name">Nombre</label>
           <input id="nameVisit" type="text" class="form-control" placeholder="">
         </div>
         <div class="form-group">
@@ -72,10 +72,17 @@
           </div>
         </div>
         <div class="form-group">
+          <label for="">Empresa del visitado</label>
+          <select id="company" class="form-control">
+            <option selected disabled>Empresa</option>
+            <option>Laboratoria</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label for="">Visitado</label>
           <select id="employee" class="form-control">
-            <option selected>Choose...</option>
-            <option>Juanita Perez</option>
+            <option selected disabled>Trabajador</option>
+            <option>Lulú Vilchez</option>
           </select>
         </div>
         <div class="form-group">
@@ -87,18 +94,10 @@
           </div>
         </div>
         <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Observaciones</span>
-            </div>
-            <textarea id="observations" class="form-control" aria-label="With textarea"></textarea>
-          </div>
-        </div>
-        <div class="form-group">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
             <label class="form-check-label" for="gridCheck">
-              Verificame
+              Verifícame
             </label>
           </div>
         </div>

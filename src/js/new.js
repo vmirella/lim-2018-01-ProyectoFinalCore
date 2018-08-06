@@ -4,10 +4,16 @@ let entryTime = document.querySelector('#entryTimeVisit');
 let name = document.querySelector('#nameVisit');
 let dni = document.querySelector('#dniVisit');
 let setFile = document.querySelector('#selectPhoto');
+let company = document.querySelector('#company');
 let employee = document.querySelector('#employee');
 let reasonForVisit = document.querySelector('#reasonForVisit');
 let observations = document.querySelector('#observations');
 const submitVisit = document.querySelector('#submit');
+
+reload = () => {
+  window.location.reload();
+};
+
 // const settingPhoto = () => {
 setFile.addEventListener('change', function (e) {
   alert('Wait a minute please')
@@ -40,16 +46,17 @@ const newVisitEntry = (photo, photoUrl) => {
     entryTime = entryTime.value;
     name = name.value;
     dni = dni.value;
+    company = company.value;
     employee = employee.value;
     reasonForVisit = reasonForVisit.value;
-    observations = observations.value;
 
-    newVisit(date, entryTime, name, dni, photo, photoUrl, employee, reasonForVisit, observations);
+    newVisit(date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit,);
 
+    // reload();
   });
 };
 
-window.newVisit = (date, entryTime, name, dni, photo, photoUrl, employee, reasonForVisit, observations) => {
+window.newVisit = (date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit) => {
   // A post entry.
   var visitData = {
     date: date,
@@ -58,9 +65,9 @@ window.newVisit = (date, entryTime, name, dni, photo, photoUrl, employee, reason
     dni: dni,
     photo: photo,
     photoUrl: photoUrl,
+    company: company,
     employee: employee,
     reasonForVisit: reasonForVisit,
-    observations: observations,
     timestamp: firebase.database.ServerValue.TIMESTAMP
   }
   // Get a key for a new Post.
