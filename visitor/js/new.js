@@ -126,7 +126,7 @@ company.addEventListener('change', () => {
 const newVisitEntry = (photo, photoUrl) => {
   submitVisit.addEventListener('click', () => {
     var selectedCompany = company.options[company.selectedIndex].text;
-    var selectedEmployee = employee.options[employee.selectedIndex].text;    
+    var selectedEmployee = employee.options[employee.selectedIndex].text;
     entryDate = entryDate.value;
     entryTime = entryTime.value;
     name = name.value;
@@ -137,6 +137,9 @@ const newVisitEntry = (photo, photoUrl) => {
 
     newVisit(entryDate, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit, );
 
+    setTimeout(() => {
+      window.location.href = 'successful.html';
+    }, 2000)
     // reload();
   });
 };
