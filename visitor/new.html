@@ -31,7 +31,7 @@
     </div>
     <div class="container">
       <form>
-        <div class="form-row">
+        <!-- <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Fecha</label>
             <input id="dateVisit" class="form-control" type="date">
@@ -40,19 +40,19 @@
             <label for="inputPassword4">Hora de entrada</label>
             <input type="time" class="form-control" id="entryTimeVisit" name="time" min="9:00" max="18:00" required />
           </div>
-        </div>
+        </div> -->
         <div class="form-group">
           <label for="name">Nombre</label>
           <input id="nameVisit" type="text" class="form-control" placeholder="">
         </div>
         <div class="form-group">
-          <label for="dni">DNI</label>
+          <label for="dni">DNI / Carnet de extranjería</label>
           <input id="dniVisit" type="text" class="form-control">
         </div>
         <div class="form-group">
           <label for="photo">Foto</label>
-          <div class="custom-file">
-            <button id="takePhoto" type="button" class="btn bg-secondary text-white" data-toggle="modal" data-target="#exampleModal">
+          <!-- <div class="custom-file"> -->
+            <button id="takePhoto" type="button" class="btn text-dark" data-toggle="modal" data-target="#exampleModal">
               Tomar foto
             </button>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -81,18 +81,18 @@
                 </div>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
         <div class="form-group">
-          <label for="">Empresa del visitado</label>
+          <label for="">Empresa</label>
           <select id="company" class="form-control">
-            <option selected disabled>Empresa</option>
+            <option selected disabled>Empresa comunera</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="">Visitado</label>
+          <label for="">Anfitrión</label>
           <select id="employee" class="form-control">
-            <option selected disabled>Trabajador</option>
+            <option selected disabled>Comunero</option>
           </select>
         </div>
         <div class="form-group">

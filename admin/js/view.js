@@ -12,11 +12,9 @@ logOut.addEventListener('click', (e) => {
 })
 
 const dbRefPost = firebase.database().ref().child('visit');
-// paintVisit.innerHTML = '';
-dbRefPost.once('value', visitKey => {
+dbRefPost.on('value', visitKey => {
+  paintVisit.innerHTML = '';
   visitKey.forEach(keys => {
-    visitId = keys.key;
-    console.log(visitId);
     paintingVisit(keys);
   });
 })
@@ -49,10 +47,10 @@ const paintingVisit = (visitId) => {
             </div>
             <p>Nombre:  ${visitId.val().name}</p>
             <p>Fecha de entrada:  ${visitId.val().date}</p>
-            <p>Hora de entrada:  ${visitId.val().entryTime}</p>
-            <p>Hora de salida: ${visitId.val().departureTime} </p>
-            <p>Empresa visitado:  ${visitId.val().company}</p>
-            <p>Empleado visitado:  ${visitId.val().employee}</p>
+            <p>Ingreso:  ${visitId.val().entryTime}</p>
+            <p>Salida: ${visitId.val().departureTime} </p>
+            <p>Empresa:  ${visitId.val().company}</p>
+            <p>Anfitrión:  ${visitId.val().employee}</p>
             <p>Razon de visita:  ${visitId.val().reasonForVisit}</p>
           </div>
           <div class="modal-footer">
@@ -67,17 +65,16 @@ const paintingVisit = (visitId) => {
   const timeOut = document.querySelector('#timeOut' + visitId.key);
   const departureTime = document.querySelector('#departureTime' + visitId.key);
 
-  if(visitId.val().departureTime === '-'){
+  if (visitId.val().departureTime === '-') {
     timeOut.style.display = 'block';
     departureTime.style.display = 'none';
-  }else{
+  } else {
     timeOut.style.display = 'none';
     departureTime.style.display = 'block';
   }
 
   timeOut.addEventListener('click', () => {
-    let getdate = new Date();
-    let getCurrentTime = getdate.getHours() + ':' + getdate.getMinutes();
+    let getCurrentTime = new Date().toString("hh:mm")
     updateVisitor(visitId.key, visitId.val().date, visitId.val().entryTime, getCurrentTime, visitId.val().name, visitId.val().dni, visitId.val().photo, visitId.val().photoUrl, visitId.val().company, visitId.val().employee, visitId.val().reasonForVisit)
   })
 }

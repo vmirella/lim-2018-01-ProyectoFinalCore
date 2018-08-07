@@ -1,13 +1,12 @@
 // let date, entryTime, name, dni, photo, photoUrl, employee, reasonForVisit, observations;
-let entryDate = document.getElementById('dateVisit');
-let entryTime = document.querySelector('#entryTimeVisit');
-let name = document.querySelector('#nameVisit');
-let dni = document.querySelector('#dniVisit');
-let setFile = document.querySelector('#selectPhoto');
-let company = document.querySelector('#company');
-let employee = document.querySelector('#employee');
-let reasonForVisit = document.querySelector('#reasonForVisit');
-let observations = document.querySelector('#observations');
+// let entryDate = document.getElementById('dateVisit');
+// let entryTime = document.querySelector('#entryTimeVisit');
+let entryDate, entryTime;
+const name = document.querySelector('#nameVisit');
+const dni = document.querySelector('#dniVisit');
+const setFile = document.querySelector('#selectPhoto');
+const reasonForVisit = document.querySelector('#reasonForVisit');
+const observations = document.querySelector('#observations');
 const submitVisit = document.querySelector('#submit');
 const takePhoto = document.querySelector('#takePhoto');
 const getOut = document.querySelector('#getOut');
@@ -85,12 +84,7 @@ const takeSnapshot = () => {
 
 capture.addEventListener('click', takeSnapshot)
 
-window.onload = () => {
-  //Mostrar fecha y hora del sistema
-  entryDate.value = new Date().toString("yyyy-MM-dd");
-  entryTime.value = new Date().toString("hh:mm");
-
-
+document.addEventListener('DOMContentLoaded', () => {
   //Llenando el select de empresas del anfitrion
   getClients()
     .then((snapshot) => {
@@ -101,7 +95,7 @@ window.onload = () => {
     .catch((error) => {
       console.log(error);
     });
-}
+});
 
 
 //llamar select de empleados en el evento change del primer select
@@ -121,21 +115,16 @@ company.addEventListener('change', () => {
 
 const newVisitEntry = (photo, photoUrl) => {
   submitVisit.addEventListener('click', () => {
-    var selectedCompany = company.options[company.selectedIndex].text;
-    var selectedEmployee = employee.options[employee.selectedIndex].text;
-    entryDate = entryDate.value;
-    entryTime = entryTime.value;
-    name = name.value;
-    dni = dni.value;
-    company = selectedCompany;
-    employee = selectedEmployee;
-    reasonForVisit = reasonForVisit.value;
+    const selectedCompany = company.options[company.selectedIndex].text;
+    const selectedEmployee = employee.options[employee.selectedIndex].text;
+    entryDate = new Date().toString("yyyy-MM-dd");
+    entryTime = new Date().toString("hh:mm");
 
-    newVisit(entryDate, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit, );
+    newVisit(entryDate, entryTime, name.value, dni.value, photo, photoUrl, selectedCompany, selectedEmployee, reasonForVisit.value );
 
     setTimeout(() => {
       window.location.href = 'successful.html';
-    }, 2000)
+    }, 1000)
     // reload();
   });
 };
