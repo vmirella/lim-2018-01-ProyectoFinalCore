@@ -6,4 +6,21 @@
   .margin {
     margin: 2rem auto;
   }
+  .center {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar{
+    background: #FDD005;
+  }
+  #player, #canvas{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+  }
+  .btn-submit{
+    float: right;
+  }
 }
