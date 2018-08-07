@@ -75,7 +75,7 @@ company.addEventListener('change', () => {
 
 const newVisitEntry = (photo, photoUrl) => {
   submitVisit.addEventListener('click', () => {
-    date = date.value;
+    entryDate = entryDate.value;
     entryTime = entryTime.value;
     name = name.value;
     dni = dni.value;
@@ -83,7 +83,7 @@ const newVisitEntry = (photo, photoUrl) => {
     employee = employee.value;
     reasonForVisit = reasonForVisit.value;
 
-    newVisit(date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit, );
+    newVisit(entryDate, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit, );
 
     // reload();
   });
