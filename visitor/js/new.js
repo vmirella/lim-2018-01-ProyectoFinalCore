@@ -40,34 +40,31 @@ setFile.addEventListener('change', function (e) {
 })
 
 window.onload = () => {
+  //Llenando el select de empresas del anfitrion
   getClients()
     .then((snapshot) => {
-      //console.log(snapshot);
       snapshot.forEach(element => {
-        console.log("ddd"+element);
-        console.log(element.val().company)
-        company.innerHTML += `<option value = "${element}">${element.val().company}</option>`;
-        /* element.forEach(e => {
-          console.log(e.val().company)
-        }) */
+        company.innerHTML += `<option value="${element.key}">${element.val().company}</option>`;
       });
-      //imprimir los clientes en el sitio deseado
     })
     .catch((error) => {
       console.log(error);
     });
 }
-
-
-//llamar en el evento change del primer select
-getEmployees('LJC5kBGvC-BBmDKVnQa')
+//llamar select de empleados en el evento change del primer select
+company.addEventListener('change', () => {
+  employee.innerHTML = '';
+  employee.innerHTML = '<option selected disabled>Trabajador</option>';
+  getEmployees(company.value)
   .then((snapshot) => {
-    console.log(snapshot.val());
-    //imprimir los clientes en el sitio deseado
+    snapshot.forEach(element => {
+      employee.innerHTML += `<option value="${element.key}">${element.val().fullname}</option>`;
+    });
   })
   .catch((error) => {
     console.log(error);
   });
+});
 
 const newVisitEntry = (photo, photoUrl) => {
   submitVisit.addEventListener('click', () => {

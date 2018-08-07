@@ -35,12 +35,12 @@ window.getEmployees = (uidClient) => {
 	return firebase.database().ref('employees').orderByChild('uid').equalTo(uidClient).once('value');
 };
 
-/*const createEmployees = () => {
+const createEmployees = () => {
 	const id = firebase.database().ref().child('employees').push().key;
 
 	firebase.database().ref('employees/' + id).set({
-		fullname: 'Gonzalo Parra',
-		uid: 'LJC5kBGvC-BBmDKVnQa'
+		fullname: 'Marc Merrill',
+		uid: '-LJC6_OFFpFv_IXTjVxH'
 	}, function(error) {
     if (error) {
       return false;
@@ -63,4 +63,4 @@ const updateEmployees = (uidEmployed) => {
     }
   });
 
-};*/
+};
