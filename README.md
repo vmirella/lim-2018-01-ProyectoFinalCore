@@ -6,6 +6,35 @@ El registro de visitantes en una empresa en América Latina es un proceso tedios
 ## Introducción
 En este proyecto la empresa de coworking donde opera Laboratoria en tu ciudad ha decidido contratarte a ti y a dos compañeras para reinventar su proceso de registro de visitantes. Con la entrada de [WeWork](https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwilrK_T5KjcAhWCj7MKHexzAEgYABAAGgJxbg&ohost=www.google.cl&cid=CAASE-RoAxXTp1Cd0ErxEHpPSGuF4Hk&sig=AOD64_38ykNPf0QRtI9n4CFtpQpth-MrNQ&q=&ved=0ahUKEwjswKvT5KjcAhVkU98KHUcYCeMQ0QwIJA&adurl=) al mercado latinoamericano, tienen mucha más competencia y necesitan invertir en tecnología para mejorar su servicio; el registro de visitantes es un primer acercamiento. Te dan la referencia de [Envoy](https://envoy.com/) en EEUU (un servicio que ofrece un sistema digital de registro de visitantes) y ustedes tienen que desarrollar una versión mínima viable (ver anexo I). 
 
+---
+
+## Historias de usuarios
+  ### Usuario visitante
+  * Yo como usuario visitante quiero poder registrarme para poder ingresar a la empresa.
+  * Yo como usuario visitante quiero poder notificar a la persona que vengo a visitar para que sepa que he llegado.
+
+  ### Usuario visitando / empleado
+  * Yo como usuario visitado (empleado) quiero que me llegue una notificacion a mi correo para saber que mi visita ha llegado.
+
+  ### Usuario administrador
+  * Yo como usuario administrador quiero poder ver todas las visitas realizadas para llevar un control de las visitas.
+
+---
+
+## Prototipo de alta fidelidad
+
+### Vista desktop / Usuario administrador
+[Prototipo usuario administrador](https://www.figma.com/proto/Y8LWMEL5y8YhZfJMbNj8Yg1W/Untitled?node-id=49%3A6&scaling=min-zoom "desktop")
+
+ ![Con titulo](img/prototipopfcc.gif "Administrador")
+
+ 
+### Vista tablet / Usuario visitante
+[Prototipo usuario vitante](https://www.figma.com/proto/Y8LWMEL5y8YhZfJMbNj8Yg1W/Untitled?node-id=49%3A1&scaling=scale-down "tablet")
+
+ ![Con titulo](img/prototipopfccvisitor.gif "Visitante")
+---
+
 ## Objetivos de aprendizaje
 El objetivo principal de este proyecto es que pongas en práctica todo lo aprendido durante el common core, con foco en la calidad, trabajando en un equipo multifuncional y presentando tu solución a una audiencia.
 ### Consideraciones generales
