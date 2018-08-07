@@ -1,5 +1,5 @@
 // let date, entryTime, name, dni, photo, photoUrl, employee, reasonForVisit, observations;
-let date = document.getElementById('dateVisit');
+let entryDate = document.getElementById('dateVisit');
 let entryTime = document.querySelector('#entryTimeVisit');
 let name = document.querySelector('#nameVisit');
 let dni = document.querySelector('#dniVisit');
@@ -40,6 +40,11 @@ setFile.addEventListener('change', function (e) {
 })
 
 window.onload = () => {
+  //Mostrar fecha y hora del sistema
+  entryDate.value = new Date().toString("yyyy-MM-dd");
+  entryTime.value = new Date().toString("hh:mm");
+ 
+
   //Llenando el select de empresas del anfitrion
   getClients()
     .then((snapshot) => {
@@ -51,6 +56,8 @@ window.onload = () => {
       console.log(error);
     });
 }
+
+
 //llamar select de empleados en el evento change del primer select
 company.addEventListener('change', () => {
   employee.innerHTML = '';
