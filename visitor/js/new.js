@@ -1,5 +1,5 @@
 // let date, entryTime, name, dni, photo, photoUrl, employee, reasonForVisit, observations;
-let date = document.getElementById('dateVisit');
+let entryDate = document.getElementById('dateVisit');
 let entryTime = document.querySelector('#entryTimeVisit');
 let name = document.querySelector('#nameVisit');
 let dni = document.querySelector('#dniVisit');
@@ -26,7 +26,7 @@ setFile.addEventListener('change', function (e) {
       /* var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       uploader.value = percentage; */
     },
-    function error(err) {},
+    function error(err) { },
     function () {
       task.snapshot.ref.getDownloadURL().then(function (downloadURL) {
         fileName = file.name;
@@ -38,11 +38,44 @@ setFile.addEventListener('change', function (e) {
     }
   )
 })
-// };
+
+window.onload = () => {
+  //Mostrar fecha y hora del sistema
+  entryDate.value = new Date().toString("yyyy-MM-dd");
+  entryTime.value = new Date().toString("hh:mm");
+ 
+
+  //Llenando el select de empresas del anfitrion
+  getClients()
+    .then((snapshot) => {
+      snapshot.forEach(element => {
+        company.innerHTML += `<option value="${element.key}">${element.val().company}</option>`;
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+
+//llamar select de empleados en el evento change del primer select
+company.addEventListener('change', () => {
+  employee.innerHTML = '';
+  employee.innerHTML = '<option selected disabled>Trabajador</option>';
+  getEmployees(company.value)
+  .then((snapshot) => {
+    snapshot.forEach(element => {
+      employee.innerHTML += `<option value="${element.key}">${element.val().fullname}</option>`;
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+});
 
 const newVisitEntry = (photo, photoUrl) => {
   submitVisit.addEventListener('click', () => {
-    date = date.value;
+    entryDate = entryDate.value;
     entryTime = entryTime.value;
     name = name.value;
     dni = dni.value;
@@ -50,34 +83,10 @@ const newVisitEntry = (photo, photoUrl) => {
     employee = employee.value;
     reasonForVisit = reasonForVisit.value;
 
-    newVisit(date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit,);
+    newVisit(entryDate, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit, );
 
     // reload();
   });
 };
 
-window.newVisit = (date, entryTime, name, dni, photo, photoUrl, company, employee, reasonForVisit) => {
-  // A post entry.
-  var visitData = {
-    date: date,
-    entryTime: entryTime,
-    name: name,
-    dni: dni,
-    photo: photo,
-    photoUrl: photoUrl,
-    company: company,
-    employee: employee,
-    reasonForVisit: reasonForVisit,
-    timestamp: firebase.database.ServerValue.TIMESTAMP
-  }
-  // Get a key for a new Post.
-  var newVisitKey = firebase.database().ref().child('visit').push().key;
 
-  // Write the new post's data simultaneously in the posts list and the user's post list.
-  var updates = {};
-  updates['/visit/' + newVisitKey] = visitData;
-
-  firebase.database().ref().update(updates);
-
-  return newVisitKey;
-};
