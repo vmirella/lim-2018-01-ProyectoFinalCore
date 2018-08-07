@@ -15,6 +15,9 @@
   .margin{
     margin: 2rem auto;
   }
+  .navbar{
+    background: #FDD005;
+  }
   .btn-mobile {
     padding: .60rem 1rem;
     margin: 0;
@@ -23,5 +26,19 @@
     padding: .10rem .50rem;
     margin: 0;
     text-transform: capitalize;
+  }
+  .visit-name{
+    cursor: pointer;
+  }
+  .photo-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .photo-visit{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
   }
 }

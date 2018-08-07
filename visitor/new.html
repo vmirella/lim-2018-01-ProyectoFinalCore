@@ -17,27 +17,12 @@
 
 <body>
   <div class="viewport">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">Registro de visitantes</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="view.html">Inicio
-              <!-- <span class="sr-only">(current)</span> -->
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Salir</a>
-          </li>
-        </ul>
-      </div>
     </nav>
     <div class="container margin">
       <nav class="navbar">
@@ -46,7 +31,7 @@
     </div>
     <div class="container">
       <form>
-        <div class="form-row">
+        <!-- <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Fecha</label>
             <input id="dateVisit" class="form-control" type="date">
@@ -55,32 +40,59 @@
             <label for="inputPassword4">Hora de entrada</label>
             <input type="time" class="form-control" id="entryTimeVisit" name="time" min="9:00" max="18:00" required />
           </div>
-        </div>
+        </div> -->
         <div class="form-group">
           <label for="name">Nombre</label>
           <input id="nameVisit" type="text" class="form-control" placeholder="">
         </div>
         <div class="form-group">
-          <label for="dni">DNI</label>
+          <label for="dni">DNI / Carnet de extranjería</label>
           <input id="dniVisit" type="text" class="form-control">
         </div>
         <div class="form-group">
           <label for="photo">Foto</label>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="selectPhoto" lang="es" accept="img/*">
-            <label class="custom-file-label" for="customFileLang">Seleccionar foto</label>
-          </div>
+          <!-- <div class="custom-file"> -->
+            <button id="takePhoto" type="button" class="btn text-dark" data-toggle="modal" data-target="#exampleModal">
+              Tomar foto
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tomar foto</h5>
+                    <button id="btnClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="camera">
+                      <div class="center">
+                        <video id="player"></video>
+                      </div>
+                    </div>
+                    <div class="center">
+                      <canvas id="canvas"></canvas>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button id="getOut" type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                    <button id="capture" type="button" class="btn btn-primary">Capturar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- </div> -->
         </div>
         <div class="form-group">
-          <label for="">Empresa del visitado</label>
+          <label for="">Empresa</label>
           <select id="company" class="form-control">
-            <option selected disabled>Empresa</option>
+            <option selected disabled>Empresa comunera</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="">Visitado</label>
+          <label for="">Anfitrión</label>
           <select id="employee" class="form-control">
-            <option selected disabled>Trabajador</option>
+            <option selected disabled>Comunero</option>
           </select>
         </div>
         <div class="form-group">
@@ -99,7 +111,9 @@
             </label>
           </div>
         </div>
-        <button id="submit" type="button" class="btn btn-primary">Enviar</button>
+        <div class="right">
+          <button id="submit" type="button" class="btn bg-dark">Enviar</button>
+        </div>
       </form>
     </div>
   </div>
