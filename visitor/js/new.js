@@ -18,10 +18,6 @@ const video = document.getElementById('player'),
   canvas = document.getElementById('canvas'),
   player = document.getElementById('player');
 
-function reload() {
-  window.location.reload();
-};
-
 takePhoto.addEventListener('click', () => {
   //Activando la camara
   navigator.getMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);

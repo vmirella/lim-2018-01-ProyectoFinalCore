@@ -4,6 +4,7 @@ window.newVisit = (date, entryTime, name, dni, photo, photoUrl, company, employe
   var visitData = {
     date: date,
     entryTime: entryTime,
+    departureTime: '-',	
     name: name,
     dni: dni,
     photo: photo,
