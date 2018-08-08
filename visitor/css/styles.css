@@ -12,6 +12,35 @@
     align-items: center;
     justify-content: center;
   }
+  .login {
+    height: calc(100% - 56px);
+  }
+  .center-item {
+    margin: 0 auto;
+  }
+  .btn-mobile {
+    padding: .60rem 1rem;
+    margin: 0;
+  }
+  td .btn[class*=btn-outline-]{
+    padding: .10rem .50rem;
+    margin: 0;
+    text-transform: capitalize;
+  }
+  .visit-name{
+    cursor: pointer;
+  }
+  .photo-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .photo-visit{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+  }
   .navbar{
     background: #FDD005;
   }
@@ -22,6 +51,9 @@
   }
   .right{
     float: right;
+  }
+  .btn-padding{
+    padding: .54rem 1.14rem;
   }
 }
 @media only screen and (min-width: 758px) {

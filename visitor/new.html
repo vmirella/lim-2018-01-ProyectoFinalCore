@@ -23,24 +23,27 @@
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="view.html">Inicio
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="logOut" class="nav-link" href="#">Cerrar sesión</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <div class="container margin">
       <nav class="navbar">
         <span class="navbar-brand" href="#">Nuevo visitante</span>
+        <a href="view.html" type="button" class="btn btn-outline-dark right btn-padding">Ver reporte</a>
       </nav>
     </div>
     <div class="container">
       <form>
-        <!-- <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Fecha</label>
-            <input id="dateVisit" class="form-control" type="date">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Hora de entrada</label>
-            <input type="time" class="form-control" id="entryTimeVisit" name="time" min="9:00" max="18:00" required />
-          </div>
-        </div> -->
         <div class="form-group">
           <label for="name">Nombre</label>
           <input id="nameVisit" type="text" class="form-control" placeholder="">
@@ -52,7 +55,7 @@
         <div class="form-group">
           <label for="photo">Foto</label>
           <!-- <div class="custom-file"> -->
-            <button id="takePhoto" type="button" class="btn text-dark" data-toggle="modal" data-target="#exampleModal">
+            <button id="takePhoto" type="button" class="btn text-dark btn-padding" data-toggle="modal" data-target="#exampleModal">
               Tomar foto
             </button>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
