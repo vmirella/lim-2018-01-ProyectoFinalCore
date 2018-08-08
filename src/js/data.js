@@ -40,8 +40,8 @@ const createEmployees = () => {
 	const id = firebase.database().ref().child('employees').push().key;
 
 	firebase.database().ref('employees/' + id).set({
-		fullname: 'Marc Merrill',
-		uid: '-LJC6_OFFpFv_IXTjVxH'
+		fullname: 'Maria Paula Rivarola',
+		uid: "-LJC5kBGvC-BBmDKVnQa"
 	}, function(error) {
     if (error) {
       return false;

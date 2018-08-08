@@ -120,11 +120,40 @@ const newVisitEntry = (photo, photoUrl) => {
     entryDate = new Date().toString("yyyy-MM-dd");
     entryTime = new Date().toString("hh:mm");
 
-    newVisit(entryDate, entryTime, name.value, dni.value, photo, photoUrl, selectedCompany, selectedEmployee, reasonForVisit.value );
-
+    newVisit(entryDate, entryTime, name.value, dni.value, photo, photoUrl, selectedCompany, selectedEmployee, reasonForVisit.value);
+    const dbRefPost = firebase.database().ref().child('employees');
+    dbRefPost.once('value', visitKey => {
+      visitKey.forEach(keys => {
+        if (employee.value === keys.key) {
+          sendMail(keys.val().email, keys.val().fullname, name.value)
+        }
+      });
+    })
     setTimeout(() => {
       window.location.href = 'successful.html';
     }, 1000)
-    // reload();
   });
 };
+
+sendMail = (email, name, visitorName) => {
+  $.ajax({
+    type: 'POST',
+    url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+    data: {
+      'key': 'ZGiSDAUGJIgaCMIqm9ysPA',
+      'message': {
+        'from_email': 'vbiaggi10@laboratoria.la',
+        'to': [{
+          'email': email,
+          'name': name,
+          'type': 'to'
+        }],
+        'autotext': 'true',
+        'subject': '¡TU VISITA HA LLEGADO!',
+        'html': visitorName + ' ya llegó y se encuentra en recepción esperándote. Ve a darle el encuentro. ¿¡Qué esperas!?'
+      }
+    }
+  }).done(function (response) {
+    console.log(response); // if you're into that sorta thing
+  });
+}
