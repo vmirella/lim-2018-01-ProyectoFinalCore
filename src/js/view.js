@@ -1,5 +1,17 @@
 const paintVisit = document.querySelector('#paintVisit');
 
+const logOut = document.querySelector('#logOut');
+
+logOut.addEventListener('click', (e) => {
+  firebase.auth().signOut().then(function () {
+    if (e.preventDefault) {
+      window.location.assign('index.html')
+    }
+  }).catch(function (error) {
+
+  });
+})
+
 const dbRefPost = firebase.database().ref().child('visit');
 dbRefPost.on('value', visitKey => {
   paintVisit.innerHTML = '';
@@ -43,7 +55,7 @@ const paintingVisit = (visitId) => {
             <p>Razon de visita:  ${visitId.val().reasonForVisit}</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>

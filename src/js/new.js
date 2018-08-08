@@ -26,6 +26,18 @@ const reasonInvalid = document.querySelector('#reasonInvalid');
 const checkbox = document.querySelector('#customControlValidation1');
 const checkboxInvalid = document.querySelector('#checkboxInvalid');
 
+const logOut = document.querySelector('#logOut');
+
+logOut.addEventListener('click', (e) => {
+  firebase.auth().signOut().then(function () {
+    if (e.preventDefault) {
+      window.location.assign('index.html')
+    }
+  }).catch(function (error) {
+
+  });
+})
+
 takePhoto.addEventListener('click', () => {
   //Activando la camara
   navigator.getMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
