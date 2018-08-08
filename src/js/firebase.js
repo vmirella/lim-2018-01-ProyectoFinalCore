@@ -7,15 +7,3 @@ var config = {
 	messagingSenderId: "658184057823"
 };
 firebase.initializeApp(config);
-
-const logOut = document.querySelector('#logOut');
-
-logOut.addEventListener('click', (e) => {
-  firebase.auth().signOut().then(function () {
-    if (e.preventDefault) {
-      window.location.assign('index.html')
-    }
-  }).catch(function (error) {
-
-  });
-})
