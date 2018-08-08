@@ -3,20 +3,20 @@
     width: 100vw;
     height: 100vh;
   }
+  .margin {
+    margin: 2rem auto;
+  }
   .center {
     display: flex;
-    height: calc(100% - 56px);
+    width: 100%;
     align-items: center;
     justify-content: center;
   }
+  .login {
+    height: calc(100% - 56px);
+  }
   .center-item {
     margin: 0 auto;
-  }
-  .margin{
-    margin: 2rem auto;
-  }
-  .navbar{
-    background: #FDD005;
   }
   .btn-mobile {
     padding: .60rem 1rem;
@@ -39,6 +39,27 @@
   .photo-visit{
     width: 7rem;
     height: 7rem;
+    border-radius: 50%;
+  }
+  .navbar{
+    background: #FDD005;
+  }
+  #player, #canvas{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+  }
+  .right{
+    float: right;
+  }
+  .btn-padding{
+    padding: .54rem 1.14rem;
+  }
+}
+@media only screen and (min-width: 758px) {
+  #player, #canvas{
+    width: 15rem;
+    height: 15rem;
     border-radius: 50%;
   }
 }
