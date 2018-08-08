@@ -16,5 +16,4 @@ global.firebase = firebasemock.MockFirebaseSdk(
 
 const modelTest = require('./data.spec');
 
-require('../admin/js/data');
-require('../visitor/js/data');
+require('../src/js/data');
