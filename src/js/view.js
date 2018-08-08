@@ -1,15 +1,4 @@
 const paintVisit = document.querySelector('#paintVisit');
-const logOut = document.querySelector('#logOut');
-
-logOut.addEventListener('click', (e) => {
-  firebase.auth().signOut().then(function () {
-    if (e.preventDefault) {
-      window.location.assign('index.html')
-    }
-  }).catch(function (error) {
-
-  });
-})
 
 const dbRefPost = firebase.database().ref().child('visit');
 dbRefPost.on('value', visitKey => {
