@@ -74,7 +74,8 @@ const paintingVisit = (visitId) => {
   }
 
   timeOut.addEventListener('click', () => {
-    let getCurrentTime = new Date().toString("hh:mm")
-    updateVisitor(visitId.key, visitId.val().date, visitId.val().entryTime, getCurrentTime, visitId.val().name, visitId.val().dni, visitId.val().photo, visitId.val().photoUrl, visitId.val().company, visitId.val().employee, visitId.val().reasonForVisit)
+    let getCurrentTime = new Date().toString("hh:mm");
+    console.log(getCurrentTime);
+    updateVisitor(visitId.key, visitId.val().date, visitId.val().entryTime, getCurrentTime, visitId.val().name, visitId.val().dni, visitId.val().photo, visitId.val().photoUrl, visitId.val().company, visitId.val().employee, visitId.val().reasonForVisit);
   })
 }

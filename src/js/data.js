@@ -36,7 +36,7 @@ window.getEmployees = (uidClient) => {
 	return firebase.database().ref('employees').orderByChild('uid').equalTo(uidClient).once('value');
 };
 
-const createEmployees = () => {
+/* const createEmployees = () => {
 	const id = firebase.database().ref().child('employees').push().key;
 
 	firebase.database().ref('employees/' + id).set({
@@ -64,22 +64,18 @@ const updateEmployees = (uidEmployed) => {
     }
   });
 
-};
+}; */
 
 window.signInUser = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      window.location.assign('view.html')
+      window.location.assign('view.html');
     })
     .catch(function (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      if (errorCode == 'auth/weak-password') {
-        alert('La contraseña es muy débil.');
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
+      alert(errorMessage);  
     });
+    return true;
 };
 
 window.updateVisitor = (visitorId, date, entryTime, departureTime, name, dni, photo, photoUrl, company, employee, reasonForVisit) => {
@@ -102,5 +98,5 @@ window.updateVisitor = (visitorId, date, entryTime, departureTime, name, dni, ph
 
   updates['/visit/' + visitorId] = visitData;
 	
-	firebase.database().ref().update(updates);
+	return firebase.database().ref().update(updates);
 }
