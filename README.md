@@ -7,6 +7,8 @@ El registro de visitantes en una empresa en América Latina es un proceso tedios
 En este proyecto la empresa de coworking donde opera Laboratoria en tu ciudad desea reinventar su proceso de registro de visitantes. 
 
 ## Demo
+
+### Usuario recepcionista
 Primer paso:
   Ingresa con 
   * Correo: admin@gmail.com
@@ -43,6 +45,18 @@ Sexto paso:
  
 Séptimo paso:
   Si deseas salir de la aplicación, haz click en CERRAR SESIÓN.
+
+### Usuario anfitrion
+
+Si tu visita ha llegado, revisa tu correo electronico.
+(En este caso tenemos los correos de algunos trabajdores de laboratia y estarian conformados por su nombre+apellido+@yopmail.com 
+Ej: Alejandra Ramirez seria alejandraramirez@yopmail.com)
+
+Revisamos el correo de Lulu y claramente observamos que su visita ha llegado.
+
+![llego](https://fotos.subefotos.com/11fe5fe5041cdb057afdc20c16c1c38do.png "llego")
+
+
 
 
 ## Entrevistas
@@ -144,7 +158,7 @@ Se rediseñó en base al feetback recibido de los entrevistados.
 
  ![Con titulo](img/prototipopfccvisitor.gif "Visitante")
 
- ### Test 
+ ## Test 
 
 
  ![test]( https://fotos.subefotos.com/8db66b64b2c4550797272ffc09b2921eo.jpg "test")
